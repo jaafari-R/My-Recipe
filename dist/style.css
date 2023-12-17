@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+}
+
+
+#container {
+    text-align: center;
+}
+
+#recipes-form {
+
+}
+
+#recipes-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.recipe {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.recipe img {
+    height: 200px;
+}
+
+.recipe ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+}

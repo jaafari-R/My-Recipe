@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="recipes-form">
+            <input type="text" id="ingredient" placeholder="ingredient Name">
+            <button id="getRecipesBtn">Get recipes</button>
+        </div>
+        <div id="recipes-container">
+
+        </div>
+    </div>
+    
+    <script id="recipes-template" type="text/x-handlebars-template">
+        {{#each recipes}}
+            <div class="recipe">
+                <h1>{{name}}</h1>
+                <img src={{imgUrl}} alt="">
+                <ul>
+                    {{#each ingredients}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/each}}
+    </script>
+
+    <!-- TODO use local handlebars  -->
+    <!-- <script src="lib/handlebars.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <script src="jquery.js"></script>
+
+    <script src="my-recipe-apiManager.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
