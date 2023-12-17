@@ -1,0 +1,7 @@
+class Recipe {
+
+}
+
+class RecipeAPIManager {
+
+}
