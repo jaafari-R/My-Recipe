@@ -11,6 +11,12 @@
         <div id="recipes-form">
             <input type="text" id="ingredient" placeholder="ingredient Name">
             <button id="getRecipesBtn">Get recipes</button>
+            <br>
+            <label for="">Dairy Free</label>
+            <input id="dairyFree" type="checkbox">
+            <br>
+            <label for="">Gluten Free</label>
+            <input id="glutenFree" type="checkbox">
         </div>
         <div id="recipes-container">
 
@@ -20,7 +26,7 @@
     <script id="recipes-template" type="text/x-handlebars-template">
         {{#each recipes}}
             <div class="recipe">
-                <h1>{{name}}</h1>
+                <h1>{{title}}</h1>
                 <img src={{imgUrl}} alt="">
                 <ul>
                     {{#each ingredients}}

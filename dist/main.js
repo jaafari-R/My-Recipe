@@ -3,12 +3,17 @@ const renderer = new Renderer();
 
 const getRecipesBtn = $("#getRecipesBtn");
 const getRecipesInput = $("#ingredient");
+const dairyFreeInput = $("#dairyFree")
+const glutenFreeInput = $("#glutenFree")
 
 $("#getRecipesBtn").click(function() {
-    myRecipe.getRecipesForIngredient(getRecipesInput.val())
+    myRecipe
+    .getRecipesForIngredient(
+        getRecipesInput.val(),
+        dairyFreeInput.is(":checked"), 
+        glutenFreeInput.is(":checked"))
     .then((recipes) => {
-        console.log(recipes)
-        console.log()
+        console.log(recipes);
         renderer.render(recipes);
     });
 })

@@ -8,7 +8,6 @@ class Renderer {
     }
     render(data) {
         this.container.empty();
-        console.log("HI")
         const HTML = this.template(data);
         this.container.append(HTML);
     }
