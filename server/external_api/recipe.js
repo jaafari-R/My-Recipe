@@ -10,6 +10,7 @@ class Recipe {
         this.title = recipe.title;
         this.ingredients = recipe.ingredients;
         this.imgUrl = recipe.thumbnail;
+        this.videoUrl = recipe.href;
     }
 }
 
@@ -26,7 +27,6 @@ class RecipeFinderAPIManager {
         if(!glutenFree && !dairyFree)
             return recipes;
 
-        // TODO do indepth search
         return recipes.filter(recipe => 
             !recipe.ingredients.find(ingredient => 
                 (dairyFree && dairyIngredients.find(dairyIng => dairyIng === ingredient)) ||
