@@ -8,12 +8,15 @@
 </head>
 <body>
     <div id="container">
-        <div id="recipes-form">
+        <h2>My Recipe</h2>
+        <form id="recipes-form">
             <input type="text" id="ingredient" placeholder="ingredient Name">
-            <button id="getRecipesBtn">Get recipes</button>
-            <div id="food-filters"></div>
-            <div id="food-categories"></div>
-        </div>
+            <h4>Food Filters:</h4>
+            <div id="food-filters" class="checkboxes"></div>
+            <h4>Food Categories:</h4>
+            <div id="food-categories" class="checkboxes"></div>
+            <button id="getRecipesBtn" type="submit">Get recipes</button>
+        </form>
         <div id="recipes-container">
 
         </div>
@@ -21,23 +24,22 @@
     
     <script id="food-filter-template" type="text/x-handlebars-template">
         {{#each foodFilters}}
-            <label for="">{{this}}</label>
-            <input id={{this}} type="checkbox">
+        <span id={{this}} data-checked=false class="checkbox">{{this}}</span>
         {{/each}}
     </script>
 
     <script id="food-categories-template" type="text/x-handlebars-template">
         {{#each foodCategories}}
-            <label for="">{{this}}</label>
-            <input id={{this}} type="checkbox">
+            <span id={{this}} data-checked=false class="checkbox">{{this}}</span>
         {{/each}}
     </script>
 
     <script id="recipes-template" type="text/x-handlebars-template">
         {{#each recipes}}
             <div class="recipe">
-                <a href={{videoUrl}} target="_blank">{{title}}</a>
                 <img src={{imgUrl}} alt="">
+                <a href={{videoUrl}} target="_blank">{{title}}</a>
+                <h5>Ingredients:</h5>
                 <ul>
                     {{#each ingredients}}
                         <li>{{this}}</li>
