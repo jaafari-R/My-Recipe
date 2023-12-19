@@ -17,6 +17,7 @@ class Renderer {
     _initialRender() {
         this.renderFoodCategoriesCheckboxes();
         this.renderFoodFilters();
+        this.disableFormSubmission();
     }
 
     renderRecipes(data) {
@@ -31,4 +32,8 @@ class Renderer {
         this.renderComponent(this.foodCategoriesContainer, this.foodCategoriesTemplate, {foodCategories});
     }
     
+    // disable refresh on form submition
+    disableFormSubmission() {
+        $("#recipes-form").on("submit", function() {return false;})
+    }
 }

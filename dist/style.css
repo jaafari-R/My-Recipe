@@ -4,7 +4,7 @@
 
 #container {
     padding-inline: 3%;
-    padding-top: 2%;
+    padding-top: 1vh;
     background-color: #e8f5f5;
     min-height: 100vh;
     text-align: center;
@@ -15,8 +15,7 @@
 }
 
 #recipes-form > h4 {
-    margin-top: 0.7em;
-    margin-bottom: 0.3em;
+    margin-top: 0.4em;
 }
 #getRecipesBtn {
     display: none;
@@ -99,6 +98,7 @@
     color: red;
     font-size:x-large;
     margin-block: 5px;
+    margin-inline: 5px;
 }
 
 .recipe > h5 {

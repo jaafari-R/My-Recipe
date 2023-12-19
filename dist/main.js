@@ -10,6 +10,7 @@ const categoriesInputs = foodCategories.map(category => $(`#${category}`));
 getRecipesBtn.click(function() {
     getRecipes();
 })
+
 checkboxes.click(function() {
     const checkbox = $(this);
     if(checkbox.data("checked") == "true") {
@@ -18,9 +19,7 @@ checkboxes.click(function() {
     } else {
         checkbox.data("checked", "true");
         checkbox.css({"background-color": "red", "color": "#ddd"})
-
     }
-
     getRecipes();
 })
 
@@ -47,12 +46,3 @@ function getCheckedBoxes(checkboxesInput) {
         .filter(checkbox => checkbox.data("checked") == "true")
         .map(checkbox => checkbox.attr("id"));
 }
-
-
-/////
-$(".checkbox").click(function() {
-
-})
-
-// disable refresh on form submition
-$("#recipes-form").on("submit", function() {return false;})
