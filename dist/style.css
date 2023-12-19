@@ -21,12 +21,26 @@
     border: 1px solid black;
 }
 
+.recipe > a {
+    display: block;
+    text-decoration: none;
+    color: red;
+    font-size:x-large;
+    margin: 10px;
+}
+
 .recipe img {
     height: 200px;
+    margin-bottom: 10px;
 }
 
 .recipe ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: left;
+}
+
+.recipe ul > li {
+    text-wrap: wrap;
+    width: 90%;
 }

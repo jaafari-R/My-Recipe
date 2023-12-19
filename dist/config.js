@@ -7,5 +7,6 @@ const controllerConfigs = {
     GET_RECIPE_BUTTON_SELECTOR: "#getRecipesBtn",
     INGREDIENT_INPUT_SELECTOR: "#ingredient",
     DIARY_FREE_CHECKBOX_SELECTOR: "#dairyFree",
-    GLUTEN_FREE_CHECKBOX_SELECTOR: "#glutenFree"
+    GLUTEN_FREE_CHECKBOX_SELECTOR: "#glutenFree",
+    NUT_FREE_CHECKBOX_SELECTOR: "#nutFree"
 }

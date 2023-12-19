@@ -5,10 +5,13 @@ const router = Router();
 
 router.get("/recipes/:ingredient", (req, res) => {
     const ingredient = req.params.ingredient;
-    const {dairyFree, glutenFree} = req.query;
+    const {dairyFree, glutenFree, nutFree} = req.query;
+    console.log(dairyFree, glutenFree, nutFree)
 
     recipeFinderApiManager
-    .getRecipesForIngredient(ingredient, dairyFree === "true", glutenFree === "true")
+    .getRecipesForIngredient(ingredient, 
+        dairyFree === "true", glutenFree === "true",
+        nutFree === "true")
     .then((recipes) => {
         res.send({success: true, recipes});
     })
