@@ -2,6 +2,9 @@
     margin: 0;
 }
 
+food-categories {
+    display: flex;
+}
 
 #container {
     text-align: center;

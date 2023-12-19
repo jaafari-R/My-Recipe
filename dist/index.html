@@ -11,25 +11,32 @@
         <div id="recipes-form">
             <input type="text" id="ingredient" placeholder="ingredient Name">
             <button id="getRecipesBtn">Get recipes</button>
-            <br>
-            <label for="">Dairy Free</label>
-            <input id="dairyFree" type="checkbox">
-            <br>
-            <label for="">Gluten Free</label>
-            <input id="glutenFree" type="checkbox">
-            <br>
-            <label for="">Nut Free</label>
-            <input id="nutFree" type="checkbox">
+            <div id="food-filters"></div>
+            <div id="food-categories"></div>
         </div>
         <div id="recipes-container">
 
         </div>
     </div>
     
+    <script id="food-filter-template" type="text/x-handlebars-template">
+        {{#each foodFilters}}
+            <label for="">{{this}}</label>
+            <input id={{this}} type="checkbox">
+        {{/each}}
+    </script>
+
+    <script id="food-categories-template" type="text/x-handlebars-template">
+        {{#each foodCategories}}
+            <label for="">{{this}}</label>
+            <input id={{this}} type="checkbox">
+        {{/each}}
+    </script>
+
     <script id="recipes-template" type="text/x-handlebars-template">
         {{#each recipes}}
             <div class="recipe">
-                <a href{{href}}>{{title}}</a>
+                <a href={{videoUrl}} target="_blank">{{title}}</a>
                 <img src={{imgUrl}} alt="">
                 <ul>
                     {{#each ingredients}}

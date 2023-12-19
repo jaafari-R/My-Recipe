@@ -1,7 +1,9 @@
 class MyRecipeApiManager {
-    getRecipesForIngredient(ingredient, dairyFree, glutenFree, nutFree) {
-        return $.get(`recipes/${ingredient}
-            ?dairyFree=${dairyFree}&glutenFree=${glutenFree}&nutFree=${nutFree}`)
+    getRecipesForIngredient(ingredient, filters, categories) {
+        let queries = "";
+        filters.forEach(filter => queries += `${filter}=true&`);
+        queries += `categories=${JSON.stringify(categories)}`;
+        return $.get(`recipes/${ingredient}?${queries}`)
         .then(data => {
             return data;
         });

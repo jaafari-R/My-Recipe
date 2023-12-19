@@ -1,6 +1,10 @@
 const rendererConfigs = {
     RECIPE_CONTAINER_SELECTOR: "#recipes-container",
-    RECIPE_TEMPLATE_SELECTOR: "#recipes-template"
+    RECIPE_TEMPLATE_SELECTOR: "#recipes-template",
+    FOOD_CATEGORIES_CONTAINER_SELECTOR: "#food-categories",
+    FOOD_CATEGORIES_TEMPLATE_SELECTOR: "#food-categories-template",
+    FOOD_FILTER_TEMPLATE_SELECTOR: "#food-filter-template",
+    FOOD_FILTER_CONTAINER_SELECTOR: "#food-filters"
 }
 
 const controllerConfigs = {
@@ -10,3 +14,6 @@ const controllerConfigs = {
     GLUTEN_FREE_CHECKBOX_SELECTOR: "#glutenFree",
     NUT_FREE_CHECKBOX_SELECTOR: "#nutFree"
 }
+
+foodFilters = ["DairyFree", "GlutenFree", "NutFree"];
+foodCategories = ["Dessert", "Chicken", "Vegetarian", "Beef", "Seafood", "Miscellaneous"]
