@@ -2,8 +2,13 @@ const externalApiConfigs = {
     RECIPE_API: "https://recipes-goodness-elevation.herokuapp.com/recipes/ingredient/"
 }
 
-foodCategories = ["Dessert", "Chicken", "Vegetarian", "Beef", "Seafood", "Miscellaneous"]
+const foodFilters = {
+    DairyFree: ["cream","cheese","milk","butter","creme","ricotta","mozzarella","custard","cream cheese"],
+    GlutenFree: ["flour","bread","spaghetti","biscuits","beer"],
+    NutFree: ["peanuts","almonds","brazil nuts","cashews","hazelnuts","macadamia nuts","pecans","pecan nuts","pistachios","walnuts"]
+}
 
 module.exports = {
-    externalApiConfigs
+    externalApiConfigs,
+    foodFilters
 }
