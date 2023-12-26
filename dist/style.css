@@ -122,3 +122,7 @@
     text-wrap: wrap;
     width: 90%;
 }
+
+.lit-star {
+    color: #ffc122;
+}

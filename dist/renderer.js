@@ -18,6 +18,19 @@ class Renderer {
         this.renderFoodCategoriesCheckboxes();
         this.renderFoodFilters();
         this.disableFormSubmission();
+        this._createRatingHandlebarsHelper();
+    }
+
+    _createRatingHandlebarsHelper() {
+        const createStar = (lit) => `<i class="fa-solid fa-star ${lit ? "lit-star" : ""}"></i>`;
+        Handlebars.registerHelper("rating", function(litStarsCount) {
+            let stars = "";
+            for(let i = 0; i < 5; ++i) {
+                stars += createStar(i < litStarsCount);
+            }
+            console.log(stars)
+            return stars;
+        })
     }
 
     renderRecipes(data) {
