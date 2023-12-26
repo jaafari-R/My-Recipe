@@ -1,17 +1,20 @@
 const { Router } = require("express");
-const recipeFinderApiManager = require("./external_api/recipe");
+const { RecipesManager } = require("./external_api/recipe");
+const RecipeFinderAPIManager = require("./external_api/recipeApiManager");
+
 
 const router = Router();
 
 router.get("/recipes/:ingredient", (req, res) => {
     const ingredient = req.params.ingredient;
-    const {filters, categories} = req.query;
+    let {filters, categories} = req.query;
+    filters = JSON.parse(filters);
+    categories = JSON.parse(categories);
 
-    recipeFinderApiManager
-    .getRecipesForIngredient(ingredient,
-        JSON.parse(categories), JSON.parse(filters))
+    RecipeFinderAPIManager.getRecipesByIngredient(ingredient)
     .then((recipes) => {
-        res.send({success: true, recipes});
+        const processedRecipes = RecipesManager.processRecipes(recipes, filters, categories);
+        res.send({success: true, recipes: processedRecipes});
     })
     .catch(error => {
         res.status(500);

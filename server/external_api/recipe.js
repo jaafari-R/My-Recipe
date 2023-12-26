@@ -22,25 +22,22 @@ class Recipe {
 }
 
 class RecipesManager {
-    constructor(recipes, filters, categories) {
-        this._recipes = recipes.map(recipe => new Recipe(recipe));
-        this._recipes = this.filterRecipes(filters);
-        this._recipes = this.categorizeRecipes(categories);
+    static processRecipes(recipes, filters, categories) {
+        recipes = recipes.map(recipe => new Recipe(recipe));
+        recipes = RecipesManager.filterRecipes(recipes, filters);
+        recipes = RecipesManager.categorizeRecipes(recipes, categories);
+        return recipes;
     }
 
-    get recipes() {
-        return this._recipes;
-    }
-
-    filterRecipes(filters) {
-        return this._recipes.filter(recipe => 
+    static filterRecipes(recipes, filters) {
+        return recipes.filter(recipe => 
             !recipe.applyIngredientFilter(filters))
     }
 
-    categorizeRecipes(categories) {
+    static categorizeRecipes(recipes, categories) {
         if(!categories.length)
-            return this._recipes;
-        return this._recipes.filter(recipe => 
+            return recipes;
+        return recipes.filter(recipe => 
             categories.includes(recipe.category)
         );
     }

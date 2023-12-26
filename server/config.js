@@ -8,7 +8,10 @@ const foodFilters = {
     NutFree: ["peanuts","almonds","brazil nuts","cashews","hazelnuts","macadamia nuts","pecans","pecan nuts","pistachios","walnuts"]
 }
 
+const STARS_UPPER_RANGE = 6;
+
 module.exports = {
     externalApiConfigs,
-    foodFilters
+    foodFilters,
+    STARS_UPPER_RANGE
 }
