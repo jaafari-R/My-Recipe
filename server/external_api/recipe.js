@@ -1,5 +1,5 @@
 const { foodFilters, STARS_UPPER_RANGE } = require("../config");
-const randomGenerator = require("../utils/random-generator");
+const RandomGenerator = require("../utils/random-generator");
 
 class Recipe {
     constructor(recipe) {
@@ -8,8 +8,8 @@ class Recipe {
         this.imgUrl = recipe.thumbnail;
         this.videoUrl = recipe.href;
         this.category = recipe.strCategory;
-        this.chefName = randomGenerator.generateRandomName();
-        this.rating = randomGenerator.generateRandomNumber(STARS_UPPER_RANGE);
+        this.chefName = RandomGenerator.generateRandomName();
+        this.rating = RandomGenerator.generateRandomNumber(STARS_UPPER_RANGE);
     }
 
     // returns true if at least one filter applies

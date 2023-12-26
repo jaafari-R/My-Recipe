@@ -1,13 +1,13 @@
 const { faker } = require('@faker-js/faker');
 
 class RandomGenerator {
-    generateRandomName() {
+    static generateRandomName() {
         return faker.person.fullName();
     }
 
-    generateRandomNumber(upperRange) {
+    static generateRandomNumber(upperRange) {
         return Math.floor(Math.random() * upperRange);
     }
 }
 
-module.exports = new RandomGenerator();
+module.exports = RandomGenerator;
