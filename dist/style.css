@@ -77,9 +77,10 @@
     border-radius: 1em;
     background-color: #ffffff88;
     margin-bottom: 1em;
+    display: grid;
 }
 
-.recipe > a {
+.recipe > .title {
     display: block;
     text-decoration: none;
     color: red;
@@ -112,4 +113,20 @@
 
 .lit-star {
     color: #ffc122;
+}
+
+.mail-recipe {
+    align-self: end;
+    text-decoration: none;
+    font-size:large;
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: end;
+    justify-self: center;
+    width: fit-content;
+    color: rgb(38, 82, 244);
+}
+
+.mail-recipe > i {
+    color: rgb(145, 168, 251);
 }

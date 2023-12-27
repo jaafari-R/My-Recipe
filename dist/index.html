@@ -25,7 +25,7 @@
     
     <script id="food-filter-template" type="text/x-handlebars-template">
         {{#each foodFilters}}
-        <span id={{this}} data-checked=false class="checkbox">{{this}}</span>
+            <span id={{this}} data-checked=false class="checkbox">{{this}}</span>
         {{/each}}
     </script>
 
@@ -39,7 +39,7 @@
         {{#each recipes}}
             <div class="recipe">
                 <img src={{imgUrl}} alt="">
-                <a href={{videoUrl}} target="_blank">{{title}}</a>
+                <a class="title" href={{videoUrl}} target="_blank">{{title}}</a>
                 <h5>Ingredients:</h5>
                 <ul>
                     {{#each ingredients}}
@@ -47,8 +47,13 @@
                     {{/each}}
                 </ul>
                 <br>
-                {{#rating rating}}{{/rating}}
+                <div class="stars">
+                    {{#rating rating}}{{/rating}}
+                </div>
                 <p>Chef: {{chefName}}</p>
+                <a target="_blank" class="mail-recipe"
+                href="mailto:?subject=Check out this recipe! {{title}}&body=You can see the recipe in this video: {{videoUrl}}" >Share via Email 
+                <i class="fa-solid fa-share-nodes"></i></a>
             </div>
         {{/each}}
     </script>
