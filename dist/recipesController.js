@@ -19,6 +19,7 @@ class RecipeController {
         }
 
         this._setUpEventListeners();
+        loadMoreRecipesBtn.prop('disabled', true);
     }
 
     getRecipes() {
@@ -26,7 +27,7 @@ class RecipeController {
             alert("Please Enter an ingredient!");
     
         return MyRecipeApiManager.getRecipesForIngredient(this.state)
-        .then((recipes) => recipes);
+        .then((results) => results.recipes);
     }
 
     loadFirstPatchRecipes() {
@@ -34,15 +35,28 @@ class RecipeController {
         this.state.filtersQuery = getCheckedBoxes(filtersInputs);
         this.state.categoriesQuery = getCheckedBoxes(categoriesInputs);
         this.state.offset = 0;
-
+        loadMoreRecipesBtn.prop('disabled', true);
+        
         this.getRecipes()
-        .then(recipes => renderer.renderRecipes(recipes))
+        .then(recipes => {
+            renderer.renderRecipes({recipes})
+            if(recipes.length === controllerConfigs.PAGE_LIMIT) {
+                loadMoreRecipesBtn.prop('disabled', false);
+            }
+    });
     }
 
     loadMoreRecipes() {
+        loadMoreRecipesBtn.prop('disabled', true);
+
         ++this.state.offset;
         this.getRecipes()
-        .then(recipes => renderer.renderMoreRecipes(recipes))
+        .then(recipes => {
+            renderer.renderMoreRecipes({recipes})
+            if(recipes.length === controllerConfigs.PAGE_LIMIT) {
+                loadMoreRecipesBtn.prop('disabled', false);
+            }
+        })
     }
 
     _setUpEventListeners() {
