@@ -22,6 +22,7 @@
 
         </div>
     </div>
+    <button id="load-more"><i class="fa-solid fa-angle-down"></i></button>
     
     <script id="food-filter-template" type="text/x-handlebars-template">
         {{#each foodFilters}}
@@ -38,7 +39,7 @@
     <script id="recipes-template" type="text/x-handlebars-template">
         {{#each recipes}}
             <div class="recipe">
-                <img src={{imgUrl}} alt="">
+                <img src={{gifUrl}}>
                 <a class="title" href={{videoUrl}} target="_blank">{{title}}</a>
                 <h5>Ingredients:</h5>
                 <ul>
@@ -66,6 +67,7 @@
     <script src="config.js"></script>
     <script src="my-recipe-apiManager.js"></script>
     <script src="renderer.js"></script>
+    <script src="recipesController.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 class MyRecipeApiManager {
-    getRecipesForIngredient(ingredient, filters, categories) {
+    static getRecipesForIngredient({ingredientQuery, filtersQuery, categoriesQuery, limit = 0 ,offset = 0}) {
         let queries = "";
-        queries += `categories=${JSON.stringify(categories)}`;
-        queries += `&filters=${JSON.stringify(filters)}`;
-        return $.get(`recipes/${ingredient}?${queries}`)
+        queries += `categories=${JSON.stringify(categoriesQuery)}`;
+        queries += `&filters=${JSON.stringify(filtersQuery)}`;
+        queries += `&limit=${limit}&offset=${offset}`
+        return $.get(`recipes/${ingredientQuery}?${queries}`)
         .then(data => {
             return data;
         });

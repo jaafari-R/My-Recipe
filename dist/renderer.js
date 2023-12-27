@@ -14,6 +14,9 @@ class Renderer {
         container.empty();
         container.append(template(data));
     }
+    renderComponentWithoutEmpty(container, template, data) {
+        container.append(template(data));
+    }
     _initialRender() {
         this.renderFoodCategoriesCheckboxes();
         this.renderFoodFilters();
@@ -28,13 +31,15 @@ class Renderer {
             for(let i = 0; i < 5; ++i) {
                 stars += createStar(i < litStarsCount);
             }
-            console.log(stars)
             return stars;
         })
     }
 
     renderRecipes(data) {
         this.renderComponent(this.recipesContainer, this.recipesTemplate, data);
+    }
+    renderMoreRecipes(data) {
+        this.renderComponentWithoutEmpty(this.recipesContainer, this.recipesTemplate, data);
     }
     
     renderFoodFilters() {

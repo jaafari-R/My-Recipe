@@ -12,7 +12,9 @@ const controllerConfigs = {
     INGREDIENT_INPUT_SELECTOR: "#ingredient",
     DIARY_FREE_CHECKBOX_SELECTOR: "#dairyFree",
     GLUTEN_FREE_CHECKBOX_SELECTOR: "#glutenFree",
-    NUT_FREE_CHECKBOX_SELECTOR: "#nutFree"
+    NUT_FREE_CHECKBOX_SELECTOR: "#nutFree",
+    LOAD_MORE_RECIPES_BUTTON_SELECTOR: "#load-more",
+    PAGE_LIMIT: 4
 }
 
 foodFilters = ["DairyFree", "GlutenFree", "NutFree"];
