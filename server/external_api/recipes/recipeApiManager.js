@@ -1,4 +1,4 @@
-const { RECIPE_API } = require("../config").externalApiConfigs;
+const { RECIPE_API } = require("../../config").externalApiConfigs;
 const { default: axios } = require("axios");
 
 class RecipeFinderAPIManager {

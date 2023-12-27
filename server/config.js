@@ -1,5 +1,6 @@
 const externalApiConfigs = {
-    RECIPE_API: "https://recipes-goodness-elevation.herokuapp.com/recipes/ingredient/"
+    RECIPE_API: "https://recipes-goodness-elevation.herokuapp.com/recipes/ingredient/",
+    GIPHY_API: "https://api.giphy.com/v1/gifs/search?api_key=SZm3Ezv7v0hmUILQvH00XeUzUN4QRin9"
 }
 
 const foodFilters = {
